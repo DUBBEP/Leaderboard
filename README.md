@@ -9,4 +9,4 @@ As of 11/12/23 the current version of the project build is unable to create new 
 
 Besides this the Every other feature functions as intended as far as I am aware.
 
-Build: 
+Build: https://dubbep.github.io/Leaderboard/
