@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         timeTaken = Time.time - startTime;
         isPlaying = false;
         playButton.SetActive(true);
-        Leaderboard.instance.SetLeaderboardEntry(Mathf.RoundToInt(timeTaken * 1000.0f));
+        Leaderboard.instance.SetLeaderboardEntry(-Mathf.RoundToInt(timeTaken * 1000.0f));
     }
 
     private void OnTriggerEnter(Collider other)

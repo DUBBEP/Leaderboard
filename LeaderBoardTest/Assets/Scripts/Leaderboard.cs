@@ -24,12 +24,16 @@ public class Leaderboard : MonoBehaviour
     {
         ExecuteCloudScriptRequest request = new ExecuteCloudScriptRequest
         {
-            FunctionName = "UpdateHighscore",
+            FunctionName = "UpdateHighScore",
             FunctionParameter = new { score = newScore },
         };
 
         PlayFabClientAPI.ExecuteCloudScript(request,
-            result => DisplayLeaderboard(),
+            result =>
+            {
+                DisplayLeaderboard();
+                Debug.Log(result.ToJson());
+            },
             Error => Debug.Log(Error.ErrorMessage)
         );
     }
