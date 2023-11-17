@@ -44,7 +44,7 @@ public class Leaderboard : MonoBehaviour
         // request to get the "Highscore" leaderboard
         GetLeaderboardRequest getLeaderboardRequest = new GetLeaderboardRequest
         {
-            StatisticName = "FastestTime",
+            StatisticName = "HighestScore",
             MaxResultsCount = 10
         };
 
@@ -66,7 +66,7 @@ public class Leaderboard : MonoBehaviour
             if (x >= leaderboard.Count)
                 continue;
             leaderboardEntries[x].transform.Find("PlayerName").GetComponent<TextMeshProUGUI>().text = (leaderboard[x].Position + 1) + ". " + leaderboard[x].DisplayName;
-            leaderboardEntries[x].transform.Find("ScoreText").GetComponent<TextMeshProUGUI>().text = (-(float)leaderboard[x].StatValue * 0.001f).ToString("F2");
+            leaderboardEntries[x].transform.Find("ScoreText").GetComponent<TextMeshProUGUI>().text = (leaderboard[x].StatValue).ToString();
         }
     }
 }
