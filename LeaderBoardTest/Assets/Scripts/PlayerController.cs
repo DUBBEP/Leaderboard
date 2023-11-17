@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private bool playerHasControl, overMaxTriggered, isPlaying;
 
-    public float speed, maxFallSpeed, tempX, tempZ;
+    public float speed, maxFallSpeed, x, z;
     
     public float bounceForce;
 
@@ -48,8 +48,8 @@ public class PlayerController : MonoBehaviour
 
 
 
-        float x = Input.GetAxis("Horizontal") * speed;
-        float z = Input.GetAxis("Vertical") * speed;
+        x = Input.GetAxis("Horizontal") * speed;
+        z = Input.GetAxis("Vertical") * speed;
 
 /*        if ( rig.velocity.magnitude + rig.velocity.y  > maxSpeed)
         {
@@ -67,14 +67,20 @@ public class PlayerController : MonoBehaviour
             overMaxTriggered = false;
         }*/
 
+
         if (-rig.velocity.y > maxFallSpeed)
             rig.velocity = new Vector3 (rig.velocity.x, -maxFallSpeed, rig.velocity.z);
 
-        if (playerHasControl)
-            rig.AddForce(new Vector3(x, 0, z));
         
         cameraRig.velocity = new Vector3(0, rig.velocity.y, 0);
 
+    }
+
+    void FixedUpdate()
+    {
+
+            if (playerHasControl)
+                rig.AddForce(new Vector3(x, 0, z));
     }
 
 

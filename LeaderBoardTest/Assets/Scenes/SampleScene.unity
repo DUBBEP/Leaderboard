@@ -3595,10 +3595,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1b09c18e721534f941aad8200ccb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 20
   maxFallSpeed: 40
-  tempX: 0
-  tempZ: 0
+  x: 0
+  z: 0
   bounceForce: 5
   playButton: {fileID: 1782653321}
   curTimeText: {fileID: 106270911}
